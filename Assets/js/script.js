@@ -37,11 +37,6 @@ console.log(blocks)
     $("#currentTime").text(time);
   }, 1000)
 
-  setInterval(function () {
-    time = dayjs().format('hh:mm:ss');
-    $("#currentTime").text(time);
-  }, 1000)
-
 }
 );
 
