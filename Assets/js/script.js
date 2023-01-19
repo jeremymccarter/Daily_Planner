@@ -43,7 +43,29 @@ console.log(blocks)
     time = dayjs().format('hh:mm:ss');
     date = dayjs().format("M-DD-YYYY");
     $("#currentDay").text(date);
-    $("#currentTime").text(time)}
+    $("#currentTime").text(time)
+    var currentHour = dayjs().hour()
+$(".time-block").each(function(){
+var blockHour = $(this).attr("id").substring(5)
+if (blockHour < currentHour) {
+$(this).addClass("past")
+$(this).removeClass("present")
+$(this).removeClass("future")    
+}
+else if (blockHour == currentHour) {
+    $(this).addClass("present")
+    $(this).removeClass("past")
+    $(this).removeClass("future")    
+    }
+else{
+    $(this).addClass("future")
+    $(this).removeClass("past")
+    $(this).removeClass("present")  
+
+}
+
+})
+  }, 1000);
 
 
-  );
+  
